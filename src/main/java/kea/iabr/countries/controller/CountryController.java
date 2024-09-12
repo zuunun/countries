@@ -23,6 +23,6 @@ public class CountryController {
     public String getCountries(Model model) {
         List<Country> countries = countryService.getAllCountries();
         model.addAttribute("countries", countries);
-        return "countries"; // Refers to countries.html
+        return "countries";
     }
 }
