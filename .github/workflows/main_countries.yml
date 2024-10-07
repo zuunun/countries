@@ -6,7 +6,7 @@ name: Build and deploy JAR app to Azure Web App - countries
 on:
   push:
     branches:
-      - main
+      - XXXXXXXXmain
   workflow_dispatch:
 
 jobs:
