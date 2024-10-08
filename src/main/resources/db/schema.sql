@@ -1,12 +1,9 @@
-CREATE
-DATABASE IF NOT EXISTS worldcountries;
-USE
-worldcountries;
+CREATE DATABASE IF NOT EXISTS worldcountries;
+USE worldcountries;
 
 DROP TABLE IF EXISTS countries;
 
-CREATE TABLE countries
-(
+CREATE TABLE countries(
     id   BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL
 );
