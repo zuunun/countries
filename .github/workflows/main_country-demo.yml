@@ -1,12 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - countries
+name: Build and deploy JAR app to Azure Web App - country-demo
 
 on:
   push:
     branches:
-      - XXXXXXXXmain
+      - main
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
           PROD_DATABASE_URL: ${{secrets.PROD_DATABASE_URL}}
           PROD_USERNAME: ${{secrets.PROD_USERNAME}}
           PROD_PASSWORD: ${{secrets.PROD_PASSWORD}}
-
+          
         run: mvn clean install
 
       - name: Upload artifact for deployment job
@@ -54,15 +54,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C312E2A685B742EABBEE480F9A1C80E8 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0C3687A4A34A42B79B7787B531746048 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8ABD936C79CC4787A4BFAB13B7CFD4BA }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CA9FEF864A264F799FAA0B793FA37809 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D9C7038EB5884E74A73E21CCAE94B873 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0E0B076A45844AE2907BC4180578A3E1 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'countries'
+          app-name: 'country-demo'
           slot-name: 'Production'
           package: '*.jar'
           
